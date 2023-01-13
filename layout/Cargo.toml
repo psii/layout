@@ -18,5 +18,9 @@ repository = "https://github.com/nadavrot/layout"
 [lib]
 name = "layout"
 
+[features]
+# disable verification (and thus avoid panics)
+no_verify = []
+
 [dependencies]
 log = { version = "0.4.17", optional = true }

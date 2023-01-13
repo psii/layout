@@ -2,9 +2,11 @@ use crate::core::geometry::do_boxes_intersect;
 use crate::topo::layout::VisualGraph;
 
 pub fn do_it(vg: &mut VisualGraph) {
+    #[cfg(not(feature = "no_verify"))]
     verify_order_in_rank(vg);
 }
 
+#[cfg(not(feature = "no_verify"))]
 fn verify_order_in_rank(vg: &mut VisualGraph) {
     for row in 0..vg.dag.num_levels() {
         let current_row = vg.dag.row(row);
